@@ -11,7 +11,8 @@ pipeline {
           ]]
         ])
         sh '''set
-echo $GIT_BUILD_REF'''
+echo $GIT_BUILD_REF
+curl $JENKINS_URL/credentials/store/system/domain/_/api/json?pretty=true'''
       }
     }
   }
